@@ -1,5 +1,48 @@
 'use strict';
 
+//global Variables
+
+//array for all products
+var productImages = [];
+
+//total votes (for counting to 25)
+var totalClicks = 0;
+
+//image place holders for diplaying on html
+var imageLeft = document.getElementById('left');
+var imageMiddle = document.getElementById('middle');
+var imageRight = document.getElementById('right');
+
+//constructor function for products
+function Products (productName,imgLocation){
+  this.productName = productName;
+  this.imgLocation = imgLocation;
+  this.productClickCount = 0;
+  this.timesDisplayed = 0;
+  productImages.push(this);
+}
+
+//constructing the product objects
+var bag = new Products('Super cool bag', 'img/bag.jpg');
+var banana = new Products('Banana slicer', 'img/banana.jpg');
+var boots = new Products('Rain boots', 'img/boots.jpg');
+var bubblegum = new Products('Meatball gum', 'img/bubblegum.jpg');
+var chair = new Products('Red chair', 'img/chair.jpg');
+var cthulhu = new Products('Cthulhu figurine', 'img/cthulhu.jpg');
+var dragon = new Products('Dragon meat', 'img/dragon');
+var pen = new Products('Utensil pen', 'img/pen.jpg');
+var petSweet = new Products('Pet Sweeper', 'img/pet-sweep.jpg');
+var shark = new Products('Shark sleeping bag', 'img/shark.jpg');
+var sweep = new Products('Crawler sweeper', 'img/sweep.png');
+var unicorn = new Products('Unicorn meat', 'img/unicorn.jpg');
+var usb = new Products('USB tentacle', 'img/usb.gif');
+var waterCan = new Products('Watering can', 'img/water-can.jpg');
+
+
+
+
+//Stuff below is from original goat demo
+
 // //global vars
 // var goatImageLeft = document.getElementById('left');
 // var goatImageRight = document.getElementById('right');
