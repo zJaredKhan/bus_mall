@@ -54,8 +54,6 @@ var usb = new Products('USB tentacle', './img/usb.gif');
 var waterCan = new Products('Watering can', './img/water-can.jpg');
 
 
-console.log(productImages[3].src);
-
 // console.log(bag);
 // console.log(banana);
 // console.log(boots);
@@ -106,39 +104,31 @@ var renderProducts = function() {
   imageRight.src = productImages[imageRandom3].src;
   productImages[imageRandom3].timesDisplayed ++;
 };
-
-// //click handler function
-// function handleClick(image){
-//   image.productClickCount += 1;
-//   totalClicks += 1;
-//   renderProducts();
-// }
-
-// //event handlers - use ids from html DOM
-
-// document.addEventListener('click', function(){
-//   handleClick(productImages[imageRandom1]);
-// });
-
-// document.addEventListener('click', function(){
-//   handleClick(productImages[imageRandom2]);
-// });
-
-// document.addEventListener('click', function(){
-//   handleClick(productImages[imageRandom3]);
-// });
-
-
-// document.addEventListener("click", function(){
-//   document.getElementById("demo").innerHTML = "Hello World!";
-// });
+console.log(totalClicks);
 renderProducts();
-console.log(imageLeft.src);
 
+//click handler function
+function handleClick(image){
+  image.productClickCount += 1;
+  totalClicks += 1;
+  console.log(totalClicks);
+  console.log(productImages);
+  renderProducts();
+}
 
+//event handlers - use ids from html DOM
 
-console.log(productImages[3].src);
+imageLeft.addEventListener('click', function(){
+  handleClick(productImages[imageRandom1]);
+});
 
+imageMiddle.addEventListener('click', function(){
+  handleClick(productImages[imageRandom2]);
+});
+
+imageRight.addEventListener('click', function(){
+  handleClick(productImages[imageRandom3]);
+});
 
 
 //Stuff below is from original goat demo
