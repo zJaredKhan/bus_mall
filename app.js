@@ -108,6 +108,7 @@ var renderProducts = function() {
 function handleClick(image){
   image.productClickCount += 1;
   totalClicks += 1;
+  console.log(productImages);
   renderProducts();
 }
 
