@@ -54,20 +54,22 @@ var usb = new Products('USB tentacle', './img/usb.gif');
 var waterCan = new Products('Watering can', './img/water-can.jpg');
 
 
-// console.log(bag);
-// console.log(banana);
-// console.log(boots);
-// console.log(bubblegum);
-// console.log(chair);
-// console.log(cthulhu);
-// console.log(dragon);
-// console.log(pen);
-// console.log(petSweet);
-// console.log(shark);
-// console.log(sweep);
-// console.log(unicorn);
-// console.log(usb);
-// console.log(waterCan);
+console.log(productImages[3].src);
+
+console.log(bag);
+console.log(banana);
+console.log(boots);
+console.log(bubblegum);
+console.log(chair);
+console.log(cthulhu);
+console.log(dragon);
+console.log(pen);
+console.log(petSweet);
+console.log(shark);
+console.log(sweep);
+console.log(unicorn);
+console.log(usb);
+console.log(waterCan);
 
 //Image number variable needed for Render function
 var imageRandom1 = 0;
@@ -81,9 +83,6 @@ var randomProduct = function() {
 
 //Render function, might need to reorder function
 var renderProducts = function() {
-  // var imageLeft = document.getElementById('left');
-  // var imageMiddle = document.getElementById('middle');
-  // var imageRight = document.getElementById('right');
   imageRandom1 = randomProduct();
   //line below is to pull the randomly selected image out of the array
   console.log(productImages[imageRandom1].src);
@@ -104,19 +103,15 @@ var renderProducts = function() {
   imageRight.src = productImages[imageRandom3].src;
   productImages[imageRandom3].timesDisplayed ++;
 };
-console.log(totalClicks);
-renderProducts();
 
 //click handler function
 function handleClick(image){
   image.productClickCount += 1;
   totalClicks += 1;
-  console.log(totalClicks);
-  console.log(productImages);
   renderProducts();
 }
 
-//event handlers - use ids from html DOM
+// //event handlers - use ids from html DOM
 
 imageLeft.addEventListener('click', function(){
   handleClick(productImages[imageRandom1]);
@@ -129,6 +124,14 @@ imageMiddle.addEventListener('click', function(){
 imageRight.addEventListener('click', function(){
   handleClick(productImages[imageRandom3]);
 });
+
+renderProducts();
+console.log(imageLeft.src);
+
+
+
+console.log(productImages[3].src);
+
 
 
 //Stuff below is from original goat demo
