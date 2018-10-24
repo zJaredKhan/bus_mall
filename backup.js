@@ -6,6 +6,7 @@ var itemLabels = []; //for the chart.
 var voteLabels = []; //also for chart
 var results = document.getElementById('update');
 var refresh = document.getElementById('refreshPage');
+var chartData = localStorage.getItem('chartPersist');
 
 //array for all products
 var productImages = [];
@@ -90,8 +91,15 @@ var renderProducts = function() {
 //click handler function
 function handleClick(image){
   image.productClickCount += 1;
+  localStorage.setItem('chartPersist', JSON.stringify(productImages));
   totalClicks += 1;
   renderProducts();
+}
+
+if(chartData) {
+  productImages = JSON.parse(chartData);
+} else {
+  localStorage.setItem('chartPersist', JSON.stringify(productImages));
 }
 
 // //event handlers - use ids from html DOM
@@ -144,7 +152,7 @@ function makeChart() {
         }],
         yAxes: [{
           ticks: {
-            max: 4,
+            max: totalClicks + 4,
             min: 0,
             stepSize: 1,
           }
